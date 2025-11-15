@@ -1,5 +1,45 @@
-body { font-family: Arial, sans-serif; margin: 20px; }
-h1 { color: #0b5; }
-form, #checkout, #success { margin-top: 20px; }
-input, select, button { display: block; margin: 10px 0; padding: 10px; }
-button { background: #0b5; color: #fff; border: none; cursor: pointer; }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  color: #333;
+}
+
+header, footer {
+  background: #004080;
+  color: white;
+  text-align: center;
+  padding: 1.5em;
+}
+
+section {
+  padding: 2em;
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  margin-top: 1em;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+form input, form button {
+  display: block;
+  width: 100%;
+  margin: 1em 0;
+  padding: 0.75em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  background: #008000;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #006400;
+}
