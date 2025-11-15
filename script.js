@@ -14,7 +14,7 @@ document.getElementById("registration-form").addEventListener("submit", async fu
   const order = await response.json();
 
   const options = {
-    key: "YOUR_PUBLIC_RAZORPAY_KEY", // Replace with your Razorpay public key
+    key: "rzp_test_Rfwa4UUvpKaJad", // Replace with your Razorpay public key
     amount: order.amount,
     currency: order.currency,
     name: "SSC Exam Registration",
