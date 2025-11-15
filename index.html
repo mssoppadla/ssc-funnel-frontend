@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SSC Prep Funnel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>SSC Prep Funnel</h1>
+  <form id="leadForm">
+    <input id="name" placeholder="Name" required>
+    <input id="email" placeholder="Email" required>
+    <input id="phone" placeholder="Phone" required>
+    <select id="planId" required>
+      <option value="">Choose Plan</option>
+      <option value="basic">Basic - ₹499</option>
+      <option value="pro">Pro - ₹2999</option>
+      <option value="elite">Elite - ₹5999</option>
+    </select>
+    <button type="submit">Continue</button>
+  </form>
+  <div id="checkout" style="display:none;">
+    <button id="payBtn">Pay Now</button>
+  </div>
+  <div id="success" style="display:none;">
+    <p>Payment successful! Check your email for details.</p>
+  </div>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
