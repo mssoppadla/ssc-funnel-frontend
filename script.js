@@ -5,7 +5,7 @@ document.getElementById("registration-form").addEventListener("submit", async fu
   const email = document.getElementById("email").value.trim();
   const phone = document.getElementById("phone").value.trim();
 
-  const response = await fetch("https://your-backend-domain.com/create-order", {
+  const response = await fetch("https://ssc-funnel-backend-1.onrender.com/create-order", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ amount: 499 }),
