@@ -1,29 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>SSC Prep Funnel</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SSC Exam Registration</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>SSC Prep Funnel</h1>
-  <form id="leadForm">
-    <input id="name" placeholder="Name" required>
-    <input id="email" placeholder="Email" required>
-    <input id="phone" placeholder="Phone" required>
-    <select id="planId" required>
-      <option value="">Choose Plan</option>
-      <option value="basic">Basic - ₹499</option>
-      <option value="pro">Pro - ₹2999</option>
-      <option value="elite">Elite - ₹5999</option>
-    </select>
-    <button type="submit">Continue</button>
-  </form>
-  <div id="checkout" style="display:none;">
-    <button id="payBtn">Pay Now</button>
-  </div>
-  <div id="success" style="display:none;">
-    <p>Payment successful! Check your email for details.</p>
-  </div>
+  <header>
+    <h1>SSC Exam 2025 Registration</h1>
+    <p>Secure your spot for the upcoming SSC exam. Limited seats available!</p>
+  </header>
+
+  <section class="funnel">
+    <h2>Why Register?</h2>
+    <ul>
+      <li>✅ Expert-curated study materials</li>
+      <li>✅ Mock tests and performance analytics</li>
+      <li>✅ Personalized guidance and support</li>
+    </ul>
+  </section>
+
+  <section class="registration">
+    <h2>Register Now</h2>
+    <form id="registration-form">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email Address" required />
+      <input type="tel" id="phone" placeholder="Phone Number" required />
+      <button type="submit">Pay & Register ₹499</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 SSC Prep Funnel. All rights reserved.</p>
+  </footer>
+
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script src="script.js"></script>
 </body>
