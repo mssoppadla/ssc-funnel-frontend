@@ -1,50 +1,32 @@
-const API_BASE = "https://ssc-funnel-backend.onrender.com";
-
-document.getElementById("leadForm").addEventListener("submit", async (e) => {
+document.getElementById("registration-form").addEventListener("submit", async function (e) {
   e.preventDefault();
 
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const phone = document.getElementById("phone").value;
-  const planId = document.getElementById("plan").value;
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
 
-  try {
-    // Step 1: Create lead
-    const resp = await fetch('${API_BASE}/api/lead', {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, phone, planId })
-    });
-    const leadData = await resp.json();
+  const response = await fetch("https://your-backend-domain.com/create-order", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ amount: 499 }),
+  });
 
-    // Step 2: Create order
-    const orderResp = await fetch('${API_BASE}/api/create-order', {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ leadId: leadData.leadId, planId })
-    });
-    const orderData = await orderResp.json();
+  const order = await response.json();
 
-    // Step 3: Razorpay checkout
-    const options = {
-      key: "rzp_test_Rfwa4UUvpKaJad", // replace with your Razorpay test key
-      amount: orderData.amount,
-      currency: "INR",
-      name: "SSC Funnel",
-      description: 'Plan: ${planId}',
-      order_id: orderData.id,
-      handler: function (response) {
-        alert("Payment successful! Payment ID: " + response.razorpaypaymentid);
-      },
-      prefill: { name, email, contact: phone },
-      theme: { color: "#3399cc" }
-    };
+  const options = {
+    key: "YOUR_PUBLIC_RAZORPAY_KEY", // Replace with your Razorpay public key
+    amount: order.amount,
+    currency: order.currency,
+    name: "SSC Exam Registration",
+    description: "Secure your SSC exam seat",
+    order_id: order.id,
+    handler: function (response) {
+      alert("Payment successful! Razorpay ID: " + response.razorpay_payment_id);
+    },
+    prefill: { name, email, contact: phone },
+    theme: { color: "#004080" },
+  };
 
-    const rzp = new Razorpay(options);
-    rzp.open();
-
-  } catch (err) {
-    console.error("Error:", err);
-    alert("Something went wrong. Please try again.");
-  }
+  const rzp = new Razorpay(options);
+  rzp.open();
 });
