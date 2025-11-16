@@ -43,8 +43,8 @@
   <section class="testimonials">
     <h2>Success Stories</h2>
     <div class="testimonial">
-      <img src="image/PraveenMorabad.jpg" alt="Pravee - SSC 2025" />
-      <blockquote>"This coaching changed my life. "</blockquote>
+      <img src="image/PraveenMorabad.jpg" alt="Praveen - SSC 2025" />
+      <blockquote>"This coaching changed my life."</blockquote>
       <p><strong>- Praveen Morabad</strong></p>
     </div>
     <div class="testimonial">
@@ -82,7 +82,8 @@
       countdownElement.textContent = `${hours}:${minutes}:${seconds}`;
     }
 
-    setInterval(updateCountdown, 1000);
+    updateCountdown(); // ✅ Run immediately on page load
+    setInterval(updateCountdown, 1000); // ✅ Then update every second
   </script>
 </body>
 </html>
