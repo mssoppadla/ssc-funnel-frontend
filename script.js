@@ -65,6 +65,7 @@ document.getElementById("registration-form").addEventListener("submit", async fu
             razorpay_signature: response.razorpay_signature,
             name,
             email,
+            phone,
           }),
         })
           .then((res) => {
