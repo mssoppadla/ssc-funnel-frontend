@@ -18,7 +18,7 @@ document.getElementById("registration-form").addEventListener("submit", async fu
       fetch("https://ssc-funnel-backend-1.onrender.com/create-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount: 99 }),
+        body: JSON.stringify({ amount: 12999 }),
       }),
     ]);
 
